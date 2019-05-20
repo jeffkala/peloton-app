@@ -26,6 +26,6 @@ wheels/
 MANIFEST
 .idea
 test.py
-
+.vscode
 *.csv
 
