@@ -56,7 +56,7 @@ class pelotonAPIManager:
 
         """
         url = self.base_url + self.logon_url
-        payload = {'username_or_email': user, 'password': passwd}
+        payload = {'username_or_email': self.user, 'password': self.passwd}
         try:
             resp = requests.post(url, headers=self.headers, data=json.dumps(payload), timeout=30, verify=False)
             if resp.ok:
