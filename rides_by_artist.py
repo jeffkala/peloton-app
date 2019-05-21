@@ -6,6 +6,7 @@ def main():
     u = input('Enter peloton email or username\n')
     p = getpass()
     sess = pelotonAPIManager(u,p)
+    print(u,p)
     print(sess.login())
     #my_dets = me(sess)
     #pprint(my_dets)
