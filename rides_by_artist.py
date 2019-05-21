@@ -3,9 +3,9 @@ from core.peloton_calls import *
 from getpass import getpass
 
 def main():
-    str(u) = input('Enter peloton email or username\n')
+    u = input('Enter peloton email or username\n')
     p = getpass()
-    sess = pelotonAPIManager(u,p)
+    sess = pelotonAPIManager(str(u),p)
     test = sess.login()
     print(test)
     print(u,p)
