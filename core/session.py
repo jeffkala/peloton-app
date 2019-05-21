@@ -21,7 +21,7 @@ class pelotonAPIManager:
             self.logon_url (str): url used to make auth request
             self.logout_url (str): url used to close teardown our session
             self.user (str): API username, peloton email or username
-            self._passwd (str): API password, peloton password
+            self.passwd (str): API password, peloton password
 
         Notes:
 
@@ -35,7 +35,7 @@ class pelotonAPIManager:
         self.logon_url = '/auth/login'
         self.logout_url = '/auth/logout'
         self.user = user
-        self._passwd = passwd
+        self.passwd = passwd
         self.headers = {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
@@ -56,7 +56,7 @@ class pelotonAPIManager:
 
         """
         url = self.base_url + self.logon_url
-        payload = {'username_or_email': self.user, 'password': self._passwd}
+        payload = {'username_or_email': self.user, 'password': self.passwd}
         try:
             resp = requests.post(url, headers=self.headers, data=json.dumps(payload), timeout=30, verify=False)
             if resp.ok:
