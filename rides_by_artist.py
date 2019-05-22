@@ -3,8 +3,8 @@ from core.peloton_calls import *
 def main():
     sess = get_connection()
     print(sess.login())
-    #my_dets = me(sess)
-    #pprint(my_dets)
+    my_dets = me(sess)
+    pprint(my_dets)
     #wo = workouts(uid)
     #pprint(wo.keys())
     #pprint(wo['count'])

@@ -59,8 +59,9 @@ class pelotonAPIManager:
         payload = {'username_or_email': self.user, 'password': self.passwd}
         try:
             resp = requests.post(url, headers=self.headers, data=json.dumps(payload), timeout=30, verify=False)
+            print(resp.text)
             if resp.ok:
-                #self.headers.update(json.loads(resp.text))
+                self.headers.update(json.loads(resp.text))
                 print('hit login print')
             else:
                 print('Could not login to {url} -->{}'.format(resp.text))
