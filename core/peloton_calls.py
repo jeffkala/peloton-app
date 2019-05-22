@@ -11,7 +11,7 @@ def get_credentials(creds_dict=None):
        the input() instead.
     """
     try:
-        with open('/home/$USER/creds.key') as f:
+        with open('creds.key') as f:
             return yaml.safe_load(f)
     except Exception as e:
         pass
