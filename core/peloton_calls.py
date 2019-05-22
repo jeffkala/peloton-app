@@ -1,6 +1,33 @@
 import json
 from pprint import pprint
 from core.session import *
+from core.session import pelotonAPIManager
+
+def get_credentials(creds_dict = None):
+    """Used to look and see if creds are specified if not we will use
+       the input() instead.
+    """
+    import yaml
+    try:
+        with open('~/creds.key') as f:
+            return yaml.safe_load(f)
+    except Exception as e:
+        pass
+
+
+def get_connection():
+    """ manages the connection to peloton
+    """
+    creds = get_credentials()
+    if creds:
+        user = creds['peloton_user']
+        password = creds['peloton_password']
+    else:
+        user = input('Enter peloton email or username\n')
+        password = getpass()
+    sess = pelotonAPIManager(user, password)
+    sess.login()
+    return sess
 
 def me(connection_obj):
     me_url = '/api/me'

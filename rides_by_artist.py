@@ -1,16 +1,8 @@
-from core.session import pelotonAPIManager
 from core.peloton_calls import *
 from getpass import getpass
 
 def main():
-    u = input('Enter peloton email or username\n')
-    p = getpass()
-    sess = pelotonAPIManager(str(u),p)
-    print(sess.user)
-    print(sess.)
-    test = sess.login()
-    print(test)
-    print(u,p)
+    sess = get_connection()
     print(sess.login())
     #my_dets = me(sess)
     #pprint(my_dets)
