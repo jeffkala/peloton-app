@@ -23,9 +23,10 @@ def main():
             if 'Bon Jovi' in str(x['artists'][0]['artist_name']):
                 print('A ride has a favorite artist {}:{}'.format(x['artists'][0]['artist_name'], x['title']))
             #print(x['artists'][0]['artist_name'], x['title'])
+
+
 if __name__ == "__main__":
     try:
         main()
     except Exception as e:
         print(e)
-
