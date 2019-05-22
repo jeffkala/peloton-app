@@ -2,18 +2,18 @@ from core.peloton_calls import *
 
 def main():
     sess = get_connection()
-    print(sess.login())
+    sess.login()
     my_dets = me(sess)
     pprint(my_dets)
-    #wo = workouts(uid)
-    #pprint(wo.keys())
-    #pprint(wo['count'])
-    #pprint(wo['summary'])
-    #data = wo['data']
-    #for x in data:
-    #    print(x['id'])
-    #det = workout_dets(sess, '7c4a0f193c8c478f88bda3f5cc803fc9')
-    #print(det)
+    wo = workouts(uid)
+    pprint(wo.keys())
+    pprint(wo['count'])
+    pprint(wo['summary'])
+    data = wo['data']
+    for x in data:
+        print(x['id'])
+    det = workout_dets(sess, '7c4a0f193c8c478f88bda3f5cc803fc9')
+    print(det)
     test = find_workout(sess)
     for x in test['data']:
         pprint(x['id'])
