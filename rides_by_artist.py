@@ -1,5 +1,4 @@
 from core.peloton_calls import *
-from getpass import getpass
 
 def main():
     sess = get_connection()

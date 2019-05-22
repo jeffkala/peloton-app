@@ -1,4 +1,5 @@
 import json
+from getpass import getpass
 from pprint import pprint
 from core.session import *
 from core.session import pelotonAPIManager
