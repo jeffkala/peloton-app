@@ -20,6 +20,7 @@ def get_connection():
     """ manages the connection to peloton
     """
     creds = get_credentials()
+    print(creds)
     if creds:
         user = creds['peloton_user']
         password = creds['peloton_password']
