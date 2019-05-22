@@ -1,6 +1,7 @@
 import json
 import sys
 import yaml
+import os
 from getpass import getpass
 from pprint import pprint
 from core.session import *
@@ -11,7 +12,8 @@ def get_credentials(creds_dict=None):
        the input() instead.
     """
     try:
-        with open('creds.key') as f:
+        file = os.path.expanduser("~/creds.key")
+        with open(file) as f:
             return yaml.safe_load(f)
     except Exception as e:
         pass
