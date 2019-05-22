@@ -21,7 +21,6 @@ def get_connection():
     """ manages the connection to peloton
     """
     creds = get_credentials()
-    print(creds)
     if creds:
         user = creds['peloton_user']
         password = creds['peloton_password']
@@ -34,11 +33,7 @@ def get_connection():
 
 def me(connection_obj):
     me_url = '/api/me'
-    print(me_url)
     me = connection_obj.get(me_url)
-    print(type(me.content))
-    print(me.content)
-
     return me.content
 
 def workouts(connection_obj, user):
