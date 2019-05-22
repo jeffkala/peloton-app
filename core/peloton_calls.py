@@ -34,7 +34,7 @@ def get_connection():
 def me(connection_obj):
     me_url = '/api/me'
     me = connection_obj.get(me_url)
-    return me.content
+    return me.json()
 
 def workouts(connection_obj, user):
     wo_url = '/api/user/{}/workouts'.format(user)
