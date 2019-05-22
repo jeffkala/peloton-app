@@ -1,14 +1,15 @@
 import json
+import sys
+import yaml
 from getpass import getpass
 from pprint import pprint
 from core.session import *
 from core.session import pelotonAPIManager
 
-def get_credentials(creds_dict = None):
+def get_credentials(creds_dict=None):
     """Used to look and see if creds are specified if not we will use
        the input() instead.
     """
-    import yaml
     try:
         with open('~/creds.key') as f:
             return yaml.safe_load(f)
